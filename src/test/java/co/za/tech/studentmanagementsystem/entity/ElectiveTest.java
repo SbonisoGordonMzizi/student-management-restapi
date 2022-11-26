@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ElectiveTest {
 
-    private Elective elective;
-    private Elective elective2;
-    private Elective elective3;
+    private ElectiveEntity elective;
+    private ElectiveEntity elective2;
+    private ElectiveEntity elective3;
 
     @BeforeEach
     void setUp() {
@@ -24,11 +24,11 @@ class ElectiveTest {
                 "Wow",'m',26);
 
         //Elective Object
-        elective = new Elective("DevOps", Set.of(student2),teacherDevOps);
+        elective = new ElectiveEntity("DevOps", Set.of(student2),teacherDevOps);
         elective.setId(100L);
-        elective3 = new Elective("DevOps", Set.of(student2),teacherDevOps);
+        elective3 = new ElectiveEntity("DevOps", Set.of(student2),teacherDevOps);
         elective3.setId(100L);
-        elective2 = new Elective("DevOps", Set.of(student2),teacherDevOps);
+        elective2 = new ElectiveEntity("DevOps", Set.of(student2),teacherDevOps);
         elective2.setId(10L);
     }
 

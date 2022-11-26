@@ -75,7 +75,7 @@ class SchoolStaffTest {
 
     @Test
     void studentObjectIsNotEqualToNull(){
-        assertNotEquals(staff1,null);
+        assertNotEquals(null,staff1);
     }
     @Test
     void studentObjectIsNotEqualToDifferentObjectType(){
@@ -106,7 +106,7 @@ class SchoolStaffTest {
         staff.setLastName("MyTest");
         staff.setAge(30);
         staff.setGender('M');
-        assertEquals(staff.hashCode(),staff1.hashCode());
+        assertEquals(staff1.hashCode(),staff.hashCode());
 
     }
 

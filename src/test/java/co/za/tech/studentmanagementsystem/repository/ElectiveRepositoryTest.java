@@ -1,6 +1,6 @@
 package co.za.tech.studentmanagementsystem.repository;
 
-import co.za.tech.studentmanagementsystem.entity.Elective;
+import co.za.tech.studentmanagementsystem.entity.ElectiveEntity;
 import co.za.tech.studentmanagementsystem.entity.SchoolStaff;
 import co.za.tech.studentmanagementsystem.entity.Student;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,9 +21,9 @@ class ElectiveRepositoryTest {
 
     @Autowired
     private ElectiveRepository electiveRepository;
-    private Elective qa;
-    private Elective cloud;
-    private Elective networking;
+    private ElectiveEntity qa;
+    private ElectiveEntity cloud;
+    private ElectiveEntity networking;
 
     @BeforeEach
     void setUp(){
@@ -45,9 +45,9 @@ class ElectiveRepositoryTest {
 
 
         //ELECTIVE Objects
-        qa = new Elective("QA", Set.of(student1),teacherDevOps);
-        cloud = new Elective("Cloud", Set.of(student2),teacherMobileDev);
-        networking = new Elective("Networking", Set.of(student2));
+        qa = new ElectiveEntity("QA", Set.of(student1),teacherDevOps);
+        cloud = new ElectiveEntity("Cloud", Set.of(student2),teacherMobileDev);
+        networking = new ElectiveEntity("Networking", Set.of(student2));
 
     }
 
@@ -69,7 +69,7 @@ class ElectiveRepositoryTest {
 
     @Test
     void addElective(){
-        Elective web = new Elective("Web Dev");
+        ElectiveEntity web = new ElectiveEntity("Web Dev");
         assertEquals(2,electiveRepository.count());
         electiveRepository.save(web);
         assertEquals(3,electiveRepository.count());
@@ -81,7 +81,7 @@ class ElectiveRepositoryTest {
         electiveRepository.save(cloud);
         electiveRepository.save(networking);
         assertEquals(5,electiveRepository.count());
-        Collection<Elective> electives = electiveRepository.findAll();
+        Collection<ElectiveEntity> electives = electiveRepository.findAll();
         assertEquals(5,electives.size());
     }
 
@@ -91,7 +91,7 @@ class ElectiveRepositoryTest {
         electiveRepository.save(cloud);
         electiveRepository.save(networking);
         assertEquals(5,electiveRepository.count());
-        Optional<Elective> cloudElective = electiveRepository.getElectiveByElective("Cloud");
+        Optional<ElectiveEntity> cloudElective = electiveRepository.getElectiveByElective("Cloud");
         assertFalse(cloudElective.isEmpty());
         assertEquals("Cloud",cloudElective.get().getElective());
     }
@@ -103,7 +103,7 @@ class ElectiveRepositoryTest {
         electiveRepository.save(cloud);
         electiveRepository.save(networking);
         assertEquals(5,electiveRepository.count());
-        Optional<Elective> qaElective = electiveRepository.findById(id);
+        Optional<ElectiveEntity> qaElective = electiveRepository.findById(id);
         assertFalse(qaElective.isEmpty());
         assertEquals("QA",qaElective.get().getElective());
     }

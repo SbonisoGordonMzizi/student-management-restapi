@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="electives")
-public class Elective {
+public class ElectiveEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,18 +28,18 @@ public class Elective {
             referencedColumnName = "id"
     )
     private SchoolStaff schoolStaff;
-    public Elective() {
+    public ElectiveEntity() {
     }
 
-    public Elective(String elective){
+    public ElectiveEntity(String elective){
         this.elective = elective;
     }
 
-    public Elective(String elective,Set<Student> person) {
+    public ElectiveEntity(String elective, Set<Student> person) {
         this(elective);
         this.student = person;
     }
-    public Elective(String elective,Set<Student> person,SchoolStaff schoolStaff) {
+    public ElectiveEntity(String elective, Set<Student> person, SchoolStaff schoolStaff) {
         this(elective,person);
         this.schoolStaff = schoolStaff;
     }
@@ -90,7 +90,7 @@ public class Elective {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Elective elective1 = (Elective) o;
+        ElectiveEntity elective1 = (ElectiveEntity) o;
 
         if (id != null ? !id.equals(elective1.id) : elective1.id != null) return false;
         return elective != null ? elective.equals(elective1.elective) : elective1.elective == null;

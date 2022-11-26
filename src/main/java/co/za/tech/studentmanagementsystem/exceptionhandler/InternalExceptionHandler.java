@@ -1,4 +1,4 @@
-package co.za.tech.studentmanagementsystem.exceptionHandler;
+package co.za.tech.studentmanagementsystem.exceptionhandler;
 
 import co.za.tech.studentmanagementsystem.runtimeexception.StudentRuntimeExeption;
 import org.springframework.http.HttpStatus;
@@ -18,16 +18,16 @@ public class InternalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String,String> apiValidationExceptionHandler(MethodArgumentNotValidException exception){
         HashMap<String,String> responseForInvalidStudentRequest = new HashMap<>();
-        exception.getBindingResult().getFieldErrors().forEach(error -> {
-            responseForInvalidStudentRequest.put(error.getField(),error.getDefaultMessage());
-        });
+        exception.getBindingResult().getFieldErrors().forEach(error ->
+            responseForInvalidStudentRequest.put(error.getField(),error.getDefaultMessage())
+        );
 
         return responseForInvalidStudentRequest;
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(StudentRuntimeExeption.class)
-    public Map<String,String> StudentExceptionHandler(StudentRuntimeExeption exeption){
+    public Map<String,String> studentExceptionHandler(StudentRuntimeExeption exeption){
         HashMap<String,String> studentNotFoundResponse = new HashMap<>();
         studentNotFoundResponse.put("Error-Message",exeption.getMessage());
         return studentNotFoundResponse;

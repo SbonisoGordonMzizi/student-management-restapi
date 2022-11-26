@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest
 @ComponentScan(basePackages = {"co.za.tech.studentmanagementsystem.bootstrap"})
-public class SchoolStaffRepoTest {
+class SchoolStaffRepoTest {
 
     @Autowired
     StuffRepository staffRepository;

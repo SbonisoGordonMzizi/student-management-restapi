@@ -1,6 +1,6 @@
 package co.za.tech.studentmanagementsystem.bootstrap;
 
-import co.za.tech.studentmanagementsystem.entity.Elective;
+import co.za.tech.studentmanagementsystem.entity.ElectiveEntity;
 import co.za.tech.studentmanagementsystem.entity.SchoolStaff;
 import co.za.tech.studentmanagementsystem.entity.Student;
 import co.za.tech.studentmanagementsystem.repository.ElectiveRepository;
@@ -49,9 +49,9 @@ public class Datainitializer implements CommandLineRunner {
 
 
         //ELECTIVE Objects
-        Elective devOps = new Elective("DevOps",Set.of(student1),teacherDevOps);
+        ElectiveEntity devOps = new ElectiveEntity("DevOps",Set.of(student1),teacherDevOps);
         electiveRepository.save(devOps);
-        Elective mobileDev = new Elective("MobileDev", Set.of(student2),teacherMobileDev);
+        ElectiveEntity mobileDev = new ElectiveEntity("MobileDev", Set.of(student2),teacherMobileDev);
         electiveRepository.save(mobileDev);
 
 

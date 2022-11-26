@@ -1,6 +1,6 @@
 package co.za.tech.studentmanagementsystem.service;
 
-import co.za.tech.studentmanagementsystem.entity.Elective;
+import co.za.tech.studentmanagementsystem.entity.ElectiveEntity;
 import co.za.tech.studentmanagementsystem.entity.SchoolStaff;
 import co.za.tech.studentmanagementsystem.entity.Student;
 import co.za.tech.studentmanagementsystem.repository.ElectiveRepository;
@@ -28,7 +28,7 @@ class ElectiveServiceTest {
     @InjectMocks
     private ElectiveService electiveService;
 
-    private Elective elective;
+    private ElectiveEntity elective;
 
     @BeforeEach
     void setUp(){
@@ -37,14 +37,14 @@ class ElectiveServiceTest {
                 "Teacher","Blony",
                 "Wow",'m',26);
 
-       elective = new Elective("DevOps", Set.of(student2),teacherDevOps);
+       elective = new ElectiveEntity("DevOps", Set.of(student2),teacherDevOps);
        elective.setId(1l);
     }
 
     @Test
     void getElectiveById() {
         when(electiveRepository.findById(1l)).thenReturn(Optional.of(elective));
-        Elective electiveRetured = electiveService.getElectiveById(1l);
+        ElectiveEntity electiveRetured = electiveService.getElectiveById(1l);
         assertEquals("DevOps",electiveRetured.getElective());
         verify(electiveRepository).findById(1l);
     }
@@ -63,7 +63,7 @@ class ElectiveServiceTest {
     @Test
     void getElectiveByName() {
         when(electiveRepository.getElectiveByElective("DevOps")).thenReturn(Optional.of(elective));
-        Elective electiveRetured = electiveService.getElectiveByName("DevOps");
+        ElectiveEntity electiveRetured = electiveService.getElectiveByName("DevOps");
         assertEquals("DevOps",electiveRetured.getElective());
         verify(electiveRepository).getElectiveByElective("DevOps");
     }
@@ -82,7 +82,7 @@ class ElectiveServiceTest {
     @Test
     void addElective() {
         when(electiveRepository.save(elective)).thenReturn(elective);
-       Elective electiveR = electiveService.addElective(elective);
+       ElectiveEntity electiveR = electiveService.addElective(elective);
        assertEquals(1,electiveR.getId());
        assertEquals("DevOps", electiveR.getElective());
     }
@@ -96,7 +96,7 @@ class ElectiveServiceTest {
     void deleteElective() {
         when(electiveRepository.findById(1l)).thenReturn(Optional.of(elective));
         doNothing().when(electiveRepository).delete(elective);
-        Elective deletedElective  = electiveService.deleteElective(elective);
+        ElectiveEntity deletedElective  = electiveService.deleteElective(elective);
 
         assertEquals("DevOps",deletedElective.getElective());
 

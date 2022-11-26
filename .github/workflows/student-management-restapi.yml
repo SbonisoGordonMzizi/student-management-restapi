@@ -1,0 +1,8 @@
+name: student management restapi workflow
+on: [push,fork]
+jobs:
+  run_hello_world:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: "Echo a string"
+        run: echo "Testing this workflow"

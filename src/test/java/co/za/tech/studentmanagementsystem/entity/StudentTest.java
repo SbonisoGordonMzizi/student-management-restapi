@@ -58,7 +58,7 @@ class StudentTest {
 
     @Test
     void studentObjectIsNotEqualToNull(){
-        assertNotEquals(student,null);
+        assertNotEquals(null,student);
     }
     @Test
     void studentObjectIsNotEqualToDifferentObjectType(){
@@ -92,6 +92,6 @@ class StudentTest {
     void testingToString(){
         String expected = "Person{StudentID=1'firstName='Test1', lastName='MyTest', gender=M, age=30}";
         String actual = student.toString();
-        assertEquals(expected,actual);
+        assertEquals(actual,expected);
     }
 }

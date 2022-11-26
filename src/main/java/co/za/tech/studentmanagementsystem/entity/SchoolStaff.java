@@ -8,7 +8,7 @@ public class SchoolStaff extends Person{
     private String department;
     private String role;
     @OneToOne(mappedBy = "schoolStaff")
-    private Elective elective;
+    private ElectiveEntity elective;
     public SchoolStaff(){}
 
     public SchoolStaff( String department,

@@ -29,7 +29,6 @@ public class TeacherController extends  AssistantTeacherController implements IT
                 studentRequest.getLastName(),
                 studentRequest.getGender().charAt(0),
                 studentRequest.getAge());
-        student.setId(studentRequest.getId());
         return studentService.addStudent(student);
     }
 
@@ -41,7 +40,6 @@ public class TeacherController extends  AssistantTeacherController implements IT
                 studentRequest.getLastName(),
                 studentRequest.getGender().charAt(0),
                 studentRequest.getAge());
-        student.setId(studentRequest.getId());
         return studentService.updateStudent(student);
     }
 

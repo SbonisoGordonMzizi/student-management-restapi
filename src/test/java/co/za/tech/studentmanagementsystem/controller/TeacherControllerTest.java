@@ -35,7 +35,6 @@ class TeacherControllerTest {
     @BeforeEach
     void setUp(){
         student = new Student("Test1","White",'F',30);
-        student.setId(3L);
     }
 
     @Test
