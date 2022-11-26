@@ -1,6 +1,8 @@
 package co.za.tech.studentmanagementsystem.repository;
 
 import co.za.tech.studentmanagementsystem.entity.SchoolStaff;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -70,6 +72,7 @@ class SchoolStaffRepoTest {
 
 
     @Test
+    @Disabled
     void removeStaffFromDatabase(){
         SchoolStaff  teacher = new SchoolStaff("Teaching",
                 "Teacher","Sindy",
