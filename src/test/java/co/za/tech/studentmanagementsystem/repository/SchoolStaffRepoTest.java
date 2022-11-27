@@ -72,7 +72,6 @@ class SchoolStaffRepoTest {
 
 
     @Test
-    @Disabled
     void removeStaffFromDatabase(){
         SchoolStaff  teacher = new SchoolStaff("Teaching",
                 "Teacher","Sindy",
@@ -84,7 +83,7 @@ class SchoolStaffRepoTest {
         teacherR.setId(3L);
 
         staffRepository.delete(teacherR);
-        assertEquals(3,staffRepository.count());
+        assertEquals(2,staffRepository.count());
     }
 
     @Test
