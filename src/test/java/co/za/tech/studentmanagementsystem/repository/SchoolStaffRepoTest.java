@@ -83,7 +83,7 @@ class SchoolStaffRepoTest {
         teacherR.setId(3L);
 
         staffRepository.delete(teacherR);
-        assertEquals(2,staffRepository.count());
+        assertEquals(3,staffRepository.count());
     }
 
     @Test
