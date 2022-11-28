@@ -1,0 +1,15 @@
+name: testing github ide
+on:
+  push: 
+    branches:
+      - main
+    
+jobs:
+  testing:
+    name: just testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: step 1
+        run: echo "I am testing"
+        shell: bash
+  
