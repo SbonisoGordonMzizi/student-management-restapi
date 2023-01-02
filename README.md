@@ -18,12 +18,13 @@ Run the following command to build and run the application: mvn spring-boot:run
 The API has the following endpoints:
 
 ```
-GET /students: retrieves a list of all students
-GET /students/{id}: retrieves a specific student by id
-POST /students: creates a new student
-PUT /students/{id}: updates a specific student by id
-DELETE /students/{id}: deletes a specific student by id
-GET /students/{id}/courses: retrieves a list of courses for a specific student
-POST /students/{id}/courses: adds a course to a specific student
-DELETE /students/{id}/courses/{courseId}: removes a course from a specific student
+GET /student/api/v1/student/{id}: retrieves a specific student by id
+
+GET /assistant/api/v1/student//firstName/{firstName}: retrieves a specific student by firstName
+GET /assistant/api/v1/student//lastName/{lastName}": retrieves a specific student by lastName
+GET /assistant/api/v1/student/all: retrieves a list of all students
+
+POST /teacher/api/v1/student/enroll : register student
+POST /teacher/api/v1/student//update : update student information
+DELETE /teacher/api/v1/student/deregister/{id}": deregister student by id
 ```
