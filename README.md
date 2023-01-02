@@ -20,8 +20,8 @@ The API has the following endpoints:
 ```
 GET /student/api/v1/student/{id}: retrieves a specific student by id
 
-GET /assistant/api/v1/student//firstName/{firstName}: retrieves a specific student by firstName
-GET /assistant/api/v1/student//lastName/{lastName}": retrieves a specific student by lastName
+GET /assistant/api/v1/student/firstName/{firstName}: retrieves a specific student by firstName
+GET /assistant/api/v1/student/lastName/{lastName}": retrieves a specific student by lastName
 GET /assistant/api/v1/student/all: retrieves a list of all students
 
 POST /teacher/api/v1/student/enroll : register student
