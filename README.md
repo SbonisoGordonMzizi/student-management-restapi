@@ -1,4 +1,4 @@
-# Student Management API
+# Student Management API works
 Student Management API is a RESTful API for managing students and their courses. It is built using Spring Boot and makes use of a MySQL database to store data.
 
 # Prerequisites
